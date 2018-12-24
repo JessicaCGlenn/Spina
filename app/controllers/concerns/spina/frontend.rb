@@ -65,7 +65,9 @@ module Spina
       end
 
       def render_404
-        render file: "#{Rails.root}/public/404.html", status: 404
+        # redirecting to the route for 404 here so that we can override it in the parent controller
+        redirect_to '/404'
+        # render file: "#{Rails.root}/public/404.html", status: 404
       end
 
       def render_with_template(page)
